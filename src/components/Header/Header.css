@@ -1,1 +1,25 @@
-.Header {}
+.Header {
+  background-color: #1c2b35;
+  padding-left: 140px;
+  padding-right: 140px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Links li {
+  display: inline;
+  list-style: none;
+}
+
+.Links li a {
+  color: white;
+  font-size: 17px;
+  text-decoration: none;
+  margin-left: 36px;
+}
+
+.Links li a:hover {
+  color: orange;
+}
