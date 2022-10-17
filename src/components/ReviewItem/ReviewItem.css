@@ -1,0 +1,52 @@
+.ReviewItem {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #95a0a7;
+  width: 571px;
+  margin: 0 auto;
+  /* gap: 5px; */
+  padding: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.ReviewItem-details-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ReviewItem-details h3 {
+  margin: 3px;
+}
+
+.ReviewItem-details p {
+  margin: 5px;
+}
+
+.ReviewItem img {
+  width: 91px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.btn-delete {
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(235, 87, 87, 0.3);
+}
+.btn-delete:hover {
+  cursor: pointer;
+  background-color: rgba(235, 87, 87, 0.7);
+}
+
+.delete-icon {
+  color: #eb5757;
+  font-size: 35px;
+}

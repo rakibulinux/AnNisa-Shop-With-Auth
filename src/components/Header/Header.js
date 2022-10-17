@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import logo from "../../images/Logo.svg";
 import "./Header.css";
 const Header = () => {
@@ -7,16 +8,44 @@ const Header = () => {
       <img src={logo} alt="" />
       <div className="Links">
         <li>
-          <a href="/shop">Order</a>
+          <NavLink
+            className={({ isActive }) => (isActive ? "isActive" : undefined)}
+            to="/shop"
+          >
+            Shop
+          </NavLink>
         </li>
         <li>
-          <a href="/order">Order Review</a>
+          <NavLink
+            className={({ isActive }) => (isActive ? "isActive" : undefined)}
+            to="/order"
+          >
+            Order
+          </NavLink>
         </li>
         <li>
-          <a href="/inventory">Manage Inventory</a>
+          <NavLink
+            className={({ isActive }) => (isActive ? "isActive" : undefined)}
+            to="/order-review"
+          >
+            Order Review
+          </NavLink>
         </li>
         <li>
-          <a href="/login">Login</a>
+          <NavLink
+            className={({ isActive }) => (isActive ? "isActive" : undefined)}
+            to="/inventory"
+          >
+            Manage Inventory
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "isActive" : undefined)}
+            to="/login"
+          >
+            Login
+          </NavLink>
         </li>
       </div>
     </nav>

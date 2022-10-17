@@ -1,0 +1,45 @@
+.Cart {
+  position: sticky;
+  top: 0;
+  padding: 20px 30px;
+  margin-left: 20px;
+}
+
+.clear-btn {
+  width: 232px;
+  height: 48px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: 0.005em;
+  color: #ffffff;
+  background: #ff3030;
+  border-radius: 4px;
+  border: none;
+}
+
+.clear-btn span {
+  margin-right: 5px;
+}
+
+.review-btn {
+  width: 232px;
+  height: 48px;
+  border: none;
+  margin-top: 10px;
+  background: #ff9900;
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: 0.005em;
+}
+
+.review-btn span {
+  margin-right: 5px;
+}
