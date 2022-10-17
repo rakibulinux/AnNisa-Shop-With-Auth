@@ -2,7 +2,6 @@ import { faArrowRight, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
-import { deleteShoppingCart, removeFromDb } from "../../utilities/fakedb";
 import "./Cart.css";
 
 const Cart = ({ cart, clearCart }) => {
@@ -12,15 +11,6 @@ const Cart = ({ cart, clearCart }) => {
   let id = [];
   console.log(id);
 
-  // const removeFromCart = (ids) => {
-  //   console.log(ids);
-  //   for (const id of ids) {
-  //     console.log(id);
-  //     removeFromDb(id);
-  //   }
-  // };
-
-  //   removeFromCart(id);
   for (const product of cart) {
     quantity = quantity + product.quantity;
     price = price + product.price * product.quantity;
