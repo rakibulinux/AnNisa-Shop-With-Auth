@@ -1,28 +1,41 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Login.css";
+import "./SignUp.css";
 import googleLogo from "../../google.png";
-
-const Login = () => {
+const SignUp = () => {
   return (
     <div className="form-container">
-      <h2 className="title-text">Login</h2>
+      <h2 className="title-text">Sign Up</h2>
       <form className="form-field">
         <div className="email-input">
           <label htmlFor="email">Email</label>
-          <input type="email" placeholder="email" required />
+          <input type="email" placeholder="email" name="email" required />
         </div>
         <div className="password-input">
           <label htmlFor="password">Password</label>
-          <input type="password" placeholder="password" required />
+          <input
+            type="password"
+            placeholder="password"
+            required
+            name="password"
+          />
+        </div>
+        <div className="password-input">
+          <label htmlFor="password">Confirm Password</label>
+          <input
+            type="password"
+            placeholder="password"
+            required
+            name="confirm"
+          />
         </div>
         <button className="login-btn" type="submit">
           Login
         </button>
         <p className="text-new">
-          New to AnNisa Shop?{" "}
-          <Link className="link-text" to="/signup">
-            Create New Account
+          Already have an account?
+          <Link className="link-text" to="/login">
+            Login
           </Link>
         </p>
         <div className="or-text">
@@ -36,4 +49,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
