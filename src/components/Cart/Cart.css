@@ -18,6 +18,7 @@
   background: #ff3030;
   border-radius: 4px;
   border: none;
+  cursor: pointer;
 }
 
 .clear-btn span {
@@ -38,6 +39,7 @@
   font-size: 17px;
   line-height: 20px;
   letter-spacing: 0.005em;
+  cursor: pointer;
 }
 
 .review-btn span {

@@ -1,10 +1,9 @@
-import { faArrowRight, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Cart.css";
 
-const Cart = ({ cart, clearCart }) => {
+const Cart = ({ cart, clearCart, children }) => {
   let price = 0;
   let shipping = 0;
   let quantity = 0;
@@ -32,12 +31,7 @@ const Cart = ({ cart, clearCart }) => {
         <span>Clear Cart</span>
         <FontAwesomeIcon icon={faTrashAlt} />
       </button>
-      <Link to="/order">
-        <button className="review-btn">
-          <span>Review Order</span>
-          <FontAwesomeIcon icon={faArrowRight} />
-        </button>
-      </Link>
+      {children}
     </div>
   );
 };

@@ -1,11 +1,16 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../contexts/UserContext";
 import logo from "../../images/Logo.svg";
 import "./Header.css";
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
   return (
     <nav className="Header">
-      <img src={logo} alt="" />
+      <Link to="/">
+        <img src={logo} alt="" />
+      </Link>
       <div className="Links">
         <li>
           <NavLink
@@ -39,22 +44,34 @@ const Header = () => {
             Manage Inventory
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            className={({ isActive }) => (isActive ? "isActive" : undefined)}
-            to="/login"
-          >
-            Login
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className={({ isActive }) => (isActive ? "isActive" : undefined)}
-            to="/signup"
-          >
-            SignUp
-          </NavLink>
-        </li>
+        {user?.uid ? (
+          <button onClick={logOut} className="logout-btn">
+            SignOut
+          </button>
+        ) : (
+          <>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "isActive" : undefined
+                }
+                to="/login"
+              >
+                Login
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "isActive" : undefined
+                }
+                to="/signup"
+              >
+                SignUp
+              </NavLink>
+            </li>
+          </>
+        )}
       </div>
     </nav>
   );
