@@ -1,8 +1,12 @@
 .Cart {
   position: sticky;
   top: 0;
-  padding: 20px 30px;
-  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-info {
 }
 
 .clear-btn {
@@ -44,4 +48,12 @@
 
 .review-btn span {
   margin-right: 5px;
+}
+
+@media screen and (max-width: 667px) {
+  .Cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

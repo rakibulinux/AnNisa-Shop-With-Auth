@@ -22,7 +22,7 @@ const Shop = () => {
     const storedCart = getStoredCart();
     const savedCart = [];
     for (const id in storedCart) {
-      const addedProduct = products.find((product) => product.id === id);
+      const addedProduct = products.find((product) => product._id === id);
       //   console.log(addedProduct);
       if (addedProduct) {
         const quantity = storedCart[id];
@@ -36,17 +36,19 @@ const Shop = () => {
   const handleAddToCart = (selectedProduct) => {
     // console.log(product);
     let newCart;
-    const exsist = cart.find((product) => product.id === selectedProduct.id);
+    const exsist = cart.find((product) => product._id === selectedProduct._id);
     if (!exsist) {
       selectedProduct.quantity = 1;
       newCart = [...cart, selectedProduct];
     } else {
-      const rest = cart.filter((product) => product.id !== selectedProduct.id);
+      const rest = cart.filter(
+        (product) => product._id !== selectedProduct._id
+      );
       exsist.quantity = exsist.quantity + 1;
       newCart = [...rest, exsist];
     }
     setCart(newCart);
-    addToDb(selectedProduct.id);
+    addToDb(selectedProduct._id);
   };
   return (
     <div className="Shop">
@@ -55,7 +57,7 @@ const Shop = () => {
         {products.map((product) => (
           <Product
             product={product}
-            key={product.id}
+            key={product._id}
             handleAddToCart={handleAddToCart}
           ></Product>
         ))}

@@ -14,7 +14,7 @@ const Cart = ({ cart, clearCart, children }) => {
     quantity = quantity + product.quantity;
     price = price + product.price * product.quantity;
     shipping = shipping + product.shipping;
-    id.push(product.id);
+    id.push(product._id);
   }
   const taxString = (price * 0.1).toFixed(2);
   const tax = parseFloat(taxString);
@@ -22,11 +22,13 @@ const Cart = ({ cart, clearCart, children }) => {
   return (
     <div className="Cart">
       <h2>Order Summary</h2>
-      <p>Selected items: {quantity}</p>
-      <p>Total Price: ${price}</p>
-      <p>Total Shipping Charge: ${shipping}</p>
-      <p>Tax: ${tax}</p>
-      <h5>Grand Total: ${grandTotal}</h5>
+      <div className="order-info">
+        <p>Selected items: {quantity}</p>
+        <p>Total Price: ${price}</p>
+        <p>Total Shipping Charge: ${shipping}</p>
+        <p>Tax: ${tax}</p>
+        <h5>Grand Total: ${grandTotal}</h5>
+      </div>
       <button onClick={() => clearCart(id)} className="clear-btn">
         <span>Clear Cart</span>
         <FontAwesomeIcon icon={faTrashAlt} />
