@@ -4,7 +4,7 @@ export const productsAddCartLoader = async () => {
   //Get products
 
   const productsData = await fetch("http://localhost:5000/products");
-  const products = await productsData.json();
+  const { products } = await productsData.json();
   console.log(products);
   // get cart
   const savedCart = getStoredCart();

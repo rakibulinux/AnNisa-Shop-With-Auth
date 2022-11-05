@@ -1,7 +1,7 @@
 .Shop {
   display: grid;
-  grid-template-columns: 3fr 2fr;
-  margin: none 20px;
+  grid-template-columns: 4fr 1fr;
+  margin: 0 20px;
   gap: 5px;
 }
 
@@ -9,14 +9,35 @@
   margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 7px;
+  gap: 25px;
 }
 
 .cart-container {
-  width: 90%;
   margin-top: 0;
   background-color: rgba(255, 153, 0, 0.3);
-  padding: 0px;
+  padding: 10px;
+}
+
+.pagination {
+  /* display: flex; */
+  text-align: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.page-size {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pagination button {
+  padding: 5px;
+}
+
+.selected {
+  background-color: orange;
 }
 
 @media screen and (max-width: 667px) {
@@ -31,5 +52,6 @@
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
   }
 }

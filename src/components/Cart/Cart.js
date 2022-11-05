@@ -8,7 +8,6 @@ const Cart = ({ cart, clearCart, children }) => {
   let shipping = 0;
   let quantity = 0;
   let id = [];
-  console.log(id);
 
   for (const product of cart) {
     quantity = quantity + product.quantity;
