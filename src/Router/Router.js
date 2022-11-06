@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/shop",
-        loader: () => fetch("http://localhost:5000/products"),
+        loader: () => fetch("https://annisa-shop-server.vercel.app/products"),
         element: <Shop />,
       },
       {

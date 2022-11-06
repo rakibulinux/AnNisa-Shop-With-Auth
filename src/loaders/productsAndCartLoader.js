@@ -3,7 +3,9 @@ import { getStoredCart } from "../utilities/fakedb";
 export const productsAddCartLoader = async () => {
   //Get products
 
-  const productsData = await fetch("http://localhost:5000/products");
+  const productsData = await fetch(
+    "https://annisa-shop-server.vercel.app/products"
+  );
   const { products } = await productsData.json();
   console.log(products);
   // get cart
