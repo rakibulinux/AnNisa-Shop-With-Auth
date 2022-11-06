@@ -34,6 +34,7 @@
 
 .pagination button {
   padding: 5px;
+  cursor: pointer;
 }
 
 .selected {
