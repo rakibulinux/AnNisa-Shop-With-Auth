@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../contexts/UserContext";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, loginGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -26,6 +26,17 @@ const Login = () => {
       })
       .catch((error) => console.error(error));
   };
+
+  const handleGoogleLogin = () => {
+    loginGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div className="form-container">
       <h2 className="title-text">Login</h2>
@@ -55,10 +66,16 @@ const Login = () => {
         <div className="or-text">
           <hr /> <span>or</span> <hr />
         </div>
-        <button className="google-btn" type="submit">
+      </form>
+      <div className="btn-google">
+        <button
+          onClick={handleGoogleLogin}
+          className="google-btn"
+          type="submit"
+        >
           <img src={googleLogo} alt="" /> <span>Continue with Google</span>
         </button>
-      </form>
+      </div>
     </div>
   );
 };

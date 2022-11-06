@@ -1,12 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import "./SignUp.css";
 import googleLogo from "../../google.png";
 import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/UserContext";
 const SignUp = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, loginGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
   const [error, setError] = useState(null);
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,6 +34,15 @@ const SignUp = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+      })
+      .catch((error) => console.error(error));
+  };
+  const handleGoogleLogin = () => {
+    loginGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(from, { replace: true });
       })
       .catch((error) => console.error(error));
   };
@@ -71,11 +84,17 @@ const SignUp = () => {
         <div className="or-text">
           <hr /> <span>or</span> <hr />
         </div>
-        <button className="google-btn" type="submit">
-          <img src={googleLogo} alt="" /> <span>Continue with Google</span>
-        </button>
       </form>
       <p>{error}</p>
+      <div className="btn-google">
+        <button
+          onClick={handleGoogleLogin}
+          className="google-btn"
+          type="submit"
+        >
+          <img src={googleLogo} alt="" /> <span>Continue with Google</span>
+        </button>
+      </div>
     </div>
   );
 };

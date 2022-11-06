@@ -85,6 +85,11 @@
   margin: 5px;
 }
 
+.btn-google {
+  display: flex;
+  justify-content: center;
+}
+
 .google-btn {
   display: flex;
   justify-content: center;
